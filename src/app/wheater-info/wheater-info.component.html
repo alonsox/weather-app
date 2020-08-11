@@ -1,1 +1,12 @@
-<p>wheater-info works!</p>
+<div *ngIf="weatherInfo; else error">
+  <h3>{{weatherInfo.cityName}}</h3>
+  <p><b>Weather</b>: {{weatherInfo.description}}</p>
+  <p><b>Humidity</b>: {{weatherInfo.humidity}} %</p>
+  <p><b>Temperature</b>: {{weatherInfo.temperature}} °C</p>
+  <p><b>Wind Speed</b>: {{weatherInfo.windSpeed}} m/s</p>
+  <img src="{{weatherInfo.iconSrc}}" alt="{{weatherInfo.description}}">
+</div>
+
+<ng-template #error>
+  <p>{{errorMsg}}</p>
+</ng-template>
