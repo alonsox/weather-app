@@ -1,17 +1,11 @@
 export interface IWheaterInfo {
   cityName: string;
-  iconPath: string;
+  iconSrc: string;
   description: string;
-
   /** In celsius */
-  minTemperature: number;
-
-  /** In celsius */
-  maxTemerature: number;
-
+  temperature: number;
   /** in meters per second */
   windSpeed: number;
-
   /** In % */
   humidity: number;
 }
