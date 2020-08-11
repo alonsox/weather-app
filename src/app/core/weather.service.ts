@@ -34,9 +34,10 @@ export class WeatherService {
         return response.json();
       })
       .then((response) => {
-        let weatherInfo = response.list[0];
-        if (weatherInfo) {
-          weatherInfo = this.fileterInfo(weatherInfo);
+        let weatherInfo: IWheaterInfo;
+        if (('list' in response) && response.list.length != 0) {
+          const info = response.list[0];
+          weatherInfo = this.fileterInfo(info);
         }
         this.weatherInfo.next(weatherInfo);
       })
