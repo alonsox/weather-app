@@ -1,1 +1,5 @@
-<p>Searchbar</p>
+<form [formGroup]="cityInfo" (ngSubmit)="onSubmit()">
+  <input type="search" formControlName="cityName" placeholder="City name">
+  <button type="submit">Search</button>
+</form>
+<p class="error-msg" *ngIf="errorMessage != ''">Error: {{errorMessage}}</p>
